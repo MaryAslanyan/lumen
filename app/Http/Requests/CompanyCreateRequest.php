@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests;
 
-class CompanyCreateRequest extends \Illuminate\Http\Request
+class CompanyCreateRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.

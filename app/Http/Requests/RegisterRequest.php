@@ -2,8 +2,6 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Http\Request;
-
 class RegisterRequest extends Request
 {
     /**

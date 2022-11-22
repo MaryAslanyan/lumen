@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\View\FileViewFinder;
+use Illuminate\View\ViewFinderInterface;
 
 class AppServiceProvider extends ServiceProvider
 {

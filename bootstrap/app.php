@@ -60,6 +60,7 @@ $app->singleton(
 */
 
 $app->configure('app');
+$app->configure('auth');
 $app->configure('services');
 $app->configure('mail');
 
@@ -96,8 +97,15 @@ $app->configure('mail');
  $app->register(App\Providers\AppServiceProvider::class);
  $app->register(App\Providers\AuthServiceProvider::class);
  $app->register(App\Providers\RepositoryServiceProvider::class);
- $app->register(\Illuminate\Mail\MailServiceProvider::class);
+ $app->register(Illuminate\Mail\MailServiceProvider::class);
  $app->register(\Illuminate\Auth\Passwords\PasswordResetServiceProvider::class);
+ $app->register(Illuminate\Notifications\NotificationServiceProvider::class);
+$app->alias('mail.manager', Illuminate\Mail\MailManager::class);
+$app->alias('mail.manager', Illuminate\Contracts\Mail\Factory::class);
+
+$app->alias('mailer', Illuminate\Mail\Mailer::class);
+$app->alias('mailer', Illuminate\Contracts\Mail\Mailer::class);
+$app->alias('mailer', Illuminate\Contracts\Mail\MailQueue::class);
  // $app->register(App\Providers\EventServiceProvider::class);
 
 /*

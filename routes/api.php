@@ -13,14 +13,14 @@
 |
 */
 
-$router->group(['namespace' => 'Api/User', 'prefix' => 'api/user'], function () use ($router) {
+$router->group(['namespace' => 'Api\User', 'prefix' => 'api/user'], function () use ($router) {
     // Authorization
     $router->post('register', 'RegisterController@register');
     $router->post('sign-in', 'SignInController@signIn');
 
     // Password recovery
     $router->post('recover-password', 'RecoverPasswordController@sendResetLinkEmail');
-    $router->patch('recover-password', 'RecoverPasswordController@reset');
+    $router->patch('recover-password', [ 'as' => 'password.reset', 'uses' => 'RecoverPasswordController@reset' ]);
 
     // Company routes
     $router->group(['middleware' => 'auth'], function () use ($router) {

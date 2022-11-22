@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests;
 
-class SignInRequest extends \Illuminate\Http\Request
+class SignInRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
